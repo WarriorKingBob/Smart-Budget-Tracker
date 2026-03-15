@@ -7,13 +7,12 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Entity
-public class TestWarehouse {
-    @Setter
+public class Warehouse {
     @Id
-    private Long id;
-    private String name;
-    private String address;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter private Long id;
+    @Setter @Getter private String name;
+    @Setter @Getter private String address;
 
 }
