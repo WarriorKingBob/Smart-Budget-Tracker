@@ -1,0 +1,12 @@
+$kind: http-request
+name: Delete Warehouse
+method: DELETE
+url: '{{baseUrl}}/api/warehouses/{{warehouseId}}'
+order: 5000
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 204", function () {
+          pm.response.to.have.status(204);
+      });

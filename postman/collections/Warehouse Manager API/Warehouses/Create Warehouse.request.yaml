@@ -1,0 +1,35 @@
+$kind: http-request
+name: Create Warehouse
+method: POST
+url: '{{baseUrl}}/api/warehouses'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Main Warehouse",
+      "address": "123 Storage Lane"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 201", function () {
+          pm.response.to.have.status(201);
+      });
+      pm.test("Response has an id", function () {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property('id');
+          pm.collectionVariables.set("warehouseId", json.id);
+      });
+      pm.test("Name matches request", function () {
+          const json = pm.response.json();
+          pm.expect(json.name).to.eql("Main Warehouse");
+      });
+      pm.test("Address matches request", function () {
+          const json = pm.response.json();
+          pm.expect(json.address).to.eql("123 Storage Lane");
+      });

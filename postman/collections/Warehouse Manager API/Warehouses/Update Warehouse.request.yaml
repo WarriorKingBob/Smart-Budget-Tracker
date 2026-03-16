@@ -1,0 +1,30 @@
+$kind: http-request
+name: Update Warehouse
+method: PUT
+url: '{{baseUrl}}/api/warehouses/{{warehouseId}}'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Updated Warehouse",
+      "address": "456 New Ave"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+      pm.test("Name is updated", function () {
+          const json = pm.response.json();
+          pm.expect(json.name).to.eql("Updated Warehouse");
+      });
+      pm.test("Address is updated", function () {
+          const json = pm.response.json();
+          pm.expect(json.address).to.eql("456 New Ave");
+      });

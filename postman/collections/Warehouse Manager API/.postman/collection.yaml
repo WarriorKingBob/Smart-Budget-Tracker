@@ -1,0 +1,7 @@
+$kind: collection
+name: Warehouse Manager API
+variables:
+  - key: baseUrl
+    value: 'http://localhost:8080'
+  - key: warehouseId
+    value: '1'
