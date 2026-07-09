@@ -1,4 +1,4 @@
-package com.example.warehousemanager;
+package com.example.smartbudgettracker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

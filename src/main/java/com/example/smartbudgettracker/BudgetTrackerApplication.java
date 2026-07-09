@@ -1,13 +1,13 @@
-package com.example.warehousemanager;
+package com.example.smartbudgettracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WarehouseManagerApplication {
+public class BudgetTrackerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WarehouseManagerApplication.class, args);
+        SpringApplication.run(BudgetTrackerApplication.class, args);
     }
 
 }
