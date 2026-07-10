@@ -1,4 +1,4 @@
-package com.example.smartbudgettracker;
+package com.example.smartbudgettracker.User;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

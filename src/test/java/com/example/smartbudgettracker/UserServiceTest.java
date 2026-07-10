@@ -1,13 +1,12 @@
 package com.example.smartbudgettracker;
 
-import jakarta.persistence.EntityManager;
+import com.example.smartbudgettracker.User.User;
+import com.example.smartbudgettracker.User.UserService;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest

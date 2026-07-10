@@ -1,4 +1,4 @@
-package com.example.smartbudgettracker;
+package com.example.smartbudgettracker.User;
 
 import org.springframework.stereotype.Service;
 import java.util.*;
