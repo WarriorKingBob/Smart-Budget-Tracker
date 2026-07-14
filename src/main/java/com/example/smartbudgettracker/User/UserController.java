@@ -16,6 +16,7 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
     public record CreateUserRequest(String username, int monthlyIncome) {}
     public record UpdateUsernameRequest(String username) {}
     public record UpdateMonthlyIncomeRequest(int monthlyIncome) {}

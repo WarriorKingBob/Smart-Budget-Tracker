@@ -10,7 +10,6 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/users/{userId}/accounts")
 public class AccountController {
-
     private final AccountService accountService;
 
     public record CreateAccountRequest(String bankName, Account.AccountType accountType, int balance) {}
@@ -68,5 +67,11 @@ public class AccountController {
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @DeleteMapping("/{accountId}")
+    public ResponseEntity<Account> deleteAccount(@PathVariable UUID accountId) {
+        accountService.deleteAccount(accountId);
+        return ResponseEntity.noContent().build();
     }
 }
