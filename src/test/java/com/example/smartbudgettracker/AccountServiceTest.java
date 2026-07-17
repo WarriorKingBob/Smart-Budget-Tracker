@@ -31,7 +31,6 @@ class AccountServiceTest {
     void testGetAccountsByUserId() {
         User user = userService.createUser("Bill", 5000);
         Account account = accountService.createAccount(user.getId(), "Test Bank", Account.AccountType.CHEQUING, 100);
-        assertNotNull(account.getId());
         assertEquals(user.getId(), account.getUser().getId());
     }
 

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -32,6 +33,7 @@ public class Account {
     @Getter @Setter private User user;
     @Setter @Getter private String bankName;
     @Getter private LocalDateTime createdAt;
+    @Getter @Setter private LocalDate accountOpenedAt;
     @Setter @Getter private int balance;
 
     @Enumerated(EnumType.STRING)
