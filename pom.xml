@@ -11,8 +11,8 @@
     <groupId>com.example</groupId>
     <artifactId>SmartBudgetTracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Warehouse Manager</name>
-    <description>Warehouse Manager</description>
+    <name>Smart Budget Tracker</name>
+    <description>Smart Budget Tracker</description>
     <url/>
     <licenses>
         <license/>

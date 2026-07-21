@@ -15,4 +15,6 @@ Schema for the database:
 
 Current progress:
 
-REST API endpoints have been successfully implemented.
+Backend successfully implemented with appropriate REST API endpoints in Controller files.
+
+Starting implementation of frontend with React + Vite. A basic transaction page has been successfully implemented.
