@@ -1,7 +1,7 @@
 import TransactionItem from "./TransactionItem";
 
-function TransactionList({ transactions }) {
-    if (transactions.length === 0) return <p>No transactions yet.</p>;
+function TransactionList({ transactions, accounts }) {
+    if (transactions.length === 0) return <p>No transactions yet. You should add one. :)</p>;
 
     return (
         <table>
@@ -12,11 +12,12 @@ function TransactionList({ transactions }) {
                 <th>Income</th>
                 <th>Expense</th>
                 <th>Description</th>
+                <th>Account</th>
             </tr>
             </thead>
             <tbody>
             {transactions.map((t) => (
-                <TransactionItem key={t.id} transaction={t} />
+                <TransactionItem key={t.id} transaction={t} accounts={accounts} />
             ))}
             </tbody>
         </table>

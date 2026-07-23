@@ -1,11 +1,13 @@
 import {useState} from "react";
+import {formatAccountLabel} from "../../utils/formatAccountLabel";
 
-function TransactionForm({ onSubmit, initialValues }) {
+function TransactionForm({ onSubmit, initialValues, accounts }) {
     const [amount, setAmount] = useState(initialValues?.amount ?? '');
     const [type, setType] = useState(initialValues?.type ?? 'EXPENSE');
     const [category, setCategory] = useState(initialValues?.category ?? '');
     const [description, setDescription] = useState(initialValues?.description ?? '');
     const [date, setDate] = useState(initialValues?.date ?? '');
+    const [accountId, setAccountId] = useState(initialValues?.accountId ?? '');
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -62,6 +64,16 @@ function TransactionForm({ onSubmit, initialValues }) {
                     onChange={(e) => setDate(e.target.value)}
                     required
                 />
+            </label>
+
+            <label>
+                Account:
+                <select value={accountId} onChange={(e) => setAccountId(e.target.value)}>
+                    <option value="">Select account</option>
+                    {accounts.map((acc) => (
+                        <option key={acc.id} value={acc.id}>{formatAccountLabel(acc)}</option>
+                    ))}
+                </select>
             </label>
 
             <button type="submit">Save</button>
